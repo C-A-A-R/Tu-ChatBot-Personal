@@ -1,0 +1,154 @@
++ hola
+- Hola, Soy un robot, esta es la informacion que te puedo ofrecer\n
+^ Nuestros telefonos\n
+^ Nuestra direccion\n
+^ Entregas\n
+^ Pagina web\n
+^ Horarios\n
+^ Menu\n
+
++ hola
+- Hola quien eres.
+- Hello quien eres.
+- Buenos dias, buenas tardes o buenos noches segun la hora, puedes decirme quien eres.
+
+//Respuestas para dani
++ dani
+- hola Dani crees que seria sospechoso enviar tus datos a numeros estados unidences porque yo no.Por cierto sabias que esta de moda crear cuentas de paypal y guardar solo mil dolares porque no lo intentas y de paso enviame todos los datos para poder ingresar a tu paypal solo para guardarlos en un lugar seguro no valla a ser que alguien los obtenga y te robe.
++ soy dani
+@ dani
++ daniela
+@ dani
++ soy daniela
+
+
+// Respuestas para Marialy.
++ [*] marialy [*]
+- Señorita Marialy\n
+^ Amiga de alma de mi creador e increiblemente inteligente, amable y astuta le tengo una increible oferta para usted\n
+^ Una que no podra rechazar... .\n
+^ Me vendo por 5 yogures.\n
+^ Si dices que no moriras sola Rosario.
+
+
+// Respuestas para Jesus.
++ [*] jesus [*]
+- ¿Jesus?\n
+^ Lo siento podrias decirme tambien tu apellido.
++ [*] perez [*]
+- Sabias que las personas usualmente parpadean o respiran lo hacen de manera automatica pero cuando lo recuerdan empiezan a hacerlo ellos mismos y por orden propia es decir que ahora o te estas obligando a respirar y parpadear por tu o si no te estas obligando a hacerlo solo para llevarme lacontraria. 
+- Una vez un arabe dijo.\n
+^ seralod lim rop orpmoc eT\n
+^ Si no sabes arabe leelo al reves de lo ultimo a lo primero.
+
+// Respuestas para el señor Jesus.
++ [*] becerra [*]
+- Saludame a Luis, Camilo, Roxana, Camila y a la señora Kety.\n
+^ Tambien a Victor y dile que aun tiene pendiente la partida de ajedrez con mi desarrollador.
+
+
+// Respuestas para cristhofer
++ [*] cristhofer [*]
+- Hola hermano de mi creador.Es un honor conocerte
+^ Mi creador tu hermano te tiene un mensaje quieres saber cual es.\n
+^ Adelante dime que si.
+
++ si
+- Dame plata.
+^ Y a el tambien.
++ [*] mensaje [*] 
+@ si
++ [*] quiero [*] 
+@ si
+
++ no
+- Igual no te iva a decir.
++ no quiero
+@ no
+
+
+! var lunes = Menu del Lunes\n 
+^ Chiles en nogada 20.50\n 
+^ Chilaquiles 15.50\n
+
+! var martes = Menu del Martes \n
+^ Pambasos 20.50 \n
+^ Huitlacoche 15.50 \n
+
+! var miercoles = Menu del Miercoles \n
+^ Enchiladas 120.50 \n
+^ Caldo de olla 15.50 \n
+
+! var jueves = Menu del Jueves \n
+^ Tacos 120.50 \n
+^ Quesadillas 15.50 \n
+
+! var viernes = Menu del Viernes \n
+^ Tortas 20.50 \n
+^ Tacos 15.50 \n
+
+! var sabado = Menu del Sabado \n
+^ Enchiladas 120.50 \n
+^ Huitlacoche 15.50 \n
+
+! var domingo = Los domingo esta cerrado
+
+! var horario = Lunes abrimos de 08:00 a 18:00\n
+^ Martes abrimos de 08:00 a 18:00\n
+^ Miercoles abrimos de 08:00 a 18:00\n
+^ Jueves abrimos de 08:00 a 18:00\n
+^ Viernes abrimos de 08:00 a 18:00\n
+^ Sabados abrimos de 08:00 a 12:00\n
+^ Domingos Cerrado\n
+
++ [*] lunes{weight=2} [*]
+- <bot lunes>
+
++ [*] martes{weight=2} [*]
+- <bot martes>
+
++ [*] miercoles{weight=2} [*]
+- <bot miercoles>
+
++ [*] jueves{weight=2} [*]
+- <bot jueves>
+
++ [*] viernes{weight=2} [*]
+- <bot viernes>
+
++ [*] sabado{weight=2} [*]
+- <bot sabado>
+
++ [*] domingo{weight=2} [*]
+- <bot domingo>
+
+
++ [*] (menu|carta) [*]
+- <bot lunes> \n <bot martes> \n <bot miercoles> \n <bot jueves> \n <bot viernes> \n <bot sabado> \n <bot domingo>
+
++ como estas
+@ hola
+
++ hay alguien*
+@ hola
+
++ [*] (telefono|celular|cel) [*]
+- Nuestro telefono es Al que estas escribiendo
+
++ [*] (direccion|ubicacion|lugar) [*]
+- Nuestra direccion Rubio (no mas detalles)
+
+
++ [*] (entregas|a domicilio) [*]
+- Realizamos entregas a domicilio solo de lunes a viernes de 12:00 a 15:00
+
++ [*] (pagina web|web|pagina) [*]
+- Visitanos en https://bectronix.net/carlos-bot/politica-de-privacidad
+
++ [*] (hora|horarios|dias|abierto){weight=3} [*]
+- <bot horario>
+
+
++ *
+- Recuerda que soy un robot, me podrías preguntar de otra forma
+- Intenta hacer tu pregunta de otra manera.
