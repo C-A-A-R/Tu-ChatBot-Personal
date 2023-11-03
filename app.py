@@ -7,7 +7,7 @@ def webhook_whatsapp():
     #SI HAY DATOS RECIBIDOS VIA GET
     if request.method == "GET":
         #SI EL TOKEN ES IGUAL AL QUE RECIBIMOS
-        if request.args.get('hub.verify_token') == "CarlosBot":
+        if request.args.get('hub.verify_token') == "Clave_propia":
             #ESCRIBIMOS EN EL NAVEGADOR EL VALOR DEL RETO RECIBIDO DESDE FACEBOOK
             return request.args.get('hub.challenge')
         else:
@@ -39,9 +39,9 @@ def webhook_whatsapp():
       #CONECTAMOS A LA BASE DE DATOS
       import mysql.connector
       mydb = mysql.connector.connect(
-          host = "23.111.160.170",
-          user = "bectroni_Carlos_bot",
-          password = "lbb_fg(=3;+y",
+          host = "IP si es en cpanel",
+          user = "usuario de la db",
+          password = "contraseña de la db",
           database='bectroni_Carlos_bot'
       )
       mycursor = mydb.cursor()
@@ -62,9 +62,9 @@ def webhook_whatsapp():
 def enviar(telefonoRecibe,respuesta):
   from heyoo import WhatsApp
   #TOKEN DE ACCESO DE FACEBOOK
-  token='EAAO0dC672vUBO9VGTP9x0BEAoqmLHGYA1SKWj2g4UXar7HQClDBfFzcKLOferi14VegZASxlSt9ZAedKxz897fZCjA6vTtxaxSV2nZCwevdDS8uE2VmxmfUxDYMcXkd6q5h8R3JJZBYSqgB6HNmAVQq2iGBivdICt5jmiXPYBDF4AO1BoUY6wnv4zcKjud4suhKUD0ZAgs02kLKMqjuTmU8uHzns8QZCX66q3bPmhgZD'
+  token='token guardado anteriormente'
   #IDENTIFICADOR DE NÚMERO DE TELÉFONO
-  idNumeroTeléfono='139649015906208'
+  idNumeroTeléfono='sale debajo de nuestro numero telefonico'
   #INICIALIZAMOS ENVIO DE MENSAJES
   mensajeWa=WhatsApp(token,idNumeroTeléfono)
   telefonoRecibe=telefonoRecibe.replace("521","52")
@@ -73,7 +73,7 @@ def enviar(telefonoRecibe,respuesta):
 
 @app.route("/politica-de-privacidad")
 def index():
-  return render_template("POLiTICA_DE_PRIVACIDAD_Tu_ChatBot_Personal.html")
+  return render_template("nombre del archivo html.html")
 
 if __name__ == "__main__":
   app.run(debug=True)
